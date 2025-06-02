@@ -1,67 +1,69 @@
 :root {
-    --bg-color: hsl(212, 45%, 89%);
-    --card-bg: hsl(0, 0%, 100%);
-    --text-color: hsl(216, 15%, 48%);
-    --link-color: hsl(228, 45%, 44%);
-    --font-family: 'Outfit', sans-serif;
-    --font-size-base: clamp(0.9rem, 1vw, 1rem); /* zamiast 15px */
-    --font-size-small: clamp(0.7rem, 0.9vw, 0.85rem); /* zamiast 11px */
-    --padding-inline: 1rem;
+    --font-main: 'Outfit', sans-serif;
+    --color-bg: hsl(212, 45%, 89%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-text-normal: hsl(216, 15%, 48%);
+    --color-link: hsl(228, 45%, 44%);
+    --shadow-main: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 body {
     box-sizing: border-box;
-    background-color: var(--bg-color);
-    font-family: var(--font-family);
+    background-color: var(--color-bg);
+    font-family: var(--font-main);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-block-size: 100vh;
+    min-height: 100vh;
     flex-direction: column;
 }
 
 .footer {
-    font-size: var(--font-size-small);
+    font-size: clamp(0.6rem, 1vw, 0.7rem);
     text-align: center;
-    margin-block-start: 1.25rem; /* zamiast margin-top */
+    margin-top: clamp(1rem, 2vw, 1.25rem);
 }
 
 .footer a {
-    color: var(--link-color);
-    text-decoration: underline; /* poprawa dostępności */
+    color: var(--color-link);
+    text-decoration: none;
 }
 
 .container {
-    background-color: var(--card-bg);
-    border-radius: 1.25rem;
-    display: flex;
+    background-color: var(--color-white);
+    border-radius: 20px;
     flex-direction: column;
+    display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 16px;
     text-align: center;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    max-inline-size: 17.5rem; /* 280px */
+    box-shadow: var(--shadow-main);
+    max-width: 280px;
 }
 
 .image {
     display: block;
-    border-radius: 0.625rem;
-    inline-size: 100%;
-    block-size: auto;
-    margin-block-end: 1.25rem;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: clamp(1rem, 2vw, 1.25rem);
 }
 
 .text_bold {
+    font-family: var(--font-main);
     font-weight: 700;
-    font-size: var(--font-size-base);
-    margin-block: 0 0.313rem;
-    padding-inline: var(--padding-inline);
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding: 0 10px;
 }
 
 .text_normal {
+    font-family: var(--font-main);
     font-weight: 400;
-    font-size: var(--font-size-base);
-    color: var(--text-color);
-    margin: 0;
-    padding-inline: var(--padding-inline);
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    color: var(--color-text-normal);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 10px;
 }
